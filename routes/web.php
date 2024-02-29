@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\RyokanController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,12 @@ Route::redirect('/', '/ryokan');
 Route::get('/ryokan', function () {
     return view('ryokan');
 })->name('ryokan');
+
+Route::post('/ryokan', function (Request $request) {
+    $ryokanController = new RyokanController();
+    $ryokanController->storeInSession($request);
+    return redirect()->route('onsen');
+});
 
 Route::get('/onsen', function () {
     return view('onsen');
