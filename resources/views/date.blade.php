@@ -1,6 +1,7 @@
 <html>
   <body>
-    date
-    <a href="{{ route('result') }}">result</a>
+    {{ session('ryokan') }}
+    {{ session('onsen') }}
+    
   </body>
 </html>

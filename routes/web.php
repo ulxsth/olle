@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\RyokanController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
