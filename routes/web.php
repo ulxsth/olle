@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 */
 
 Route::redirect('/', '/ryokan');
+
+// ryokan
+// -------------------------------------------------
 Route::get('/ryokan', function () {
     return view('ryokan');
 })->name('ryokan');
@@ -26,14 +29,23 @@ Route::post('/ryokan', function (Request $request) {
     return redirect()->route('onsen');
 });
 
+
+// onsen
+// -------------------------------------------------
 Route::get('/onsen', function () {
     return view('onsen');
 })->name('onsen');
 
+
+// date
+// -------------------------------------------------
 Route::get('/date', function () {
     return view('date');
 })->name('date');
 
+
+// result
+// -------------------------------------------------
 Route::get('/result', function () {
     return view('result');
 })->name('result');
