@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/ryokan');
 Route::get('/ryokan', function () {
     return view('ryokan');
-});
+})->name('ryokan');
+
 Route::get('/onsen', function () {
     return view('onsen');
-});
+})->name('onsen');
+
 Route::get('/result', function () {
     return view('result');
-});
+})->name('result');
