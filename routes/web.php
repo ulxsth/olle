@@ -22,6 +22,10 @@ Route::get('/onsen', function () {
     return view('onsen');
 })->name('onsen');
 
+Route::get('/date', function () {
+    return view('date');
+})->name('date');
+
 Route::get('/result', function () {
     return view('result');
 })->name('result');

@@ -1,6 +1,6 @@
 <html>
   <body>
     onsen
-    <a href="{{ route('result') }}">result</a>
+    <a href="{{ route('date') }}">date</a>
   </body>
 </html>
