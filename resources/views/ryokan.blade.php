@@ -1,7 +1,8 @@
 <html>
   <body>
     <h1>STEP1</h1>
-    <form action="" method="post">
+    <form action="/ryokan" method="post">
+      @csrf
       <label for="onsen">旅館</label>
       <select name="onsen" id="onsen">
         <option value="1">旅館1</option>
