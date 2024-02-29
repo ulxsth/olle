@@ -12,6 +12,6 @@ class RyokanController extends Controller
      * @return void
      */
     public function storeInSession(Request $request) {
-        $request->session()->put('ryokan', $request->all());
+        $request->session()->put('ryokan', $request->input('name'));
     }
 }
