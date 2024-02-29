@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\OnsenController;
 use App\Http\Controllers\RyokanController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -35,6 +35,12 @@ Route::post('/ryokan', function (Request $request) {
 Route::get('/onsen', function () {
     return view('onsen');
 })->name('onsen');
+
+Route::post('/onsen', function (Request $request) {
+    $onsenController = new OnsenController();
+    $onsenController->storeInSession($request);
+    return redirect()->route('date');
+});
 
 
 // date
