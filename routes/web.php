@@ -1,6 +1,7 @@
 <?php
-use App\Http\Controllers\OnsenController;
 use App\Http\Controllers\RyokanController;
+use App\Http\Controllers\OnsenController;
+use App\Http\Controllers\DateController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,11 @@ Route::get('/date', function () {
     return view('date');
 })->name('date');
 
+Route::post('/date', function (Request $request) {
+    $dateController = new DateController();
+    $dateController->storeInSession($request);
+    return redirect()->route('result');
+});
 
 // result
 // -------------------------------------------------
