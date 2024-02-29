@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', '/ryokan');
+Route::get('/ryokan', function () {
+    return view('ryokan');
+});
+Route::get('/onsen', function () {
+    return view('onsen');
+});
+Route::get('/result', function () {
+    return view('result');
 });
