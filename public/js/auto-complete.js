@@ -27,7 +27,8 @@ function initMap() {
       return;
     }
   });
-  
+
+  // TODO: バリデーション（現在は表示のみ、フォーム送信の中断などは機能していない）
   autocomplete.addListener('place_changed', function () {
     var place = autocomplete.getPlace();
     if (!place.geometry) {
