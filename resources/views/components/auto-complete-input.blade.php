@@ -1,2 +1,2 @@
-@props(['placeholder'])
-<input id="pac-input" type="text" placeholder="{{ $placeholder }}" />
+@props(['placeholder', 'name'])
+<input id="pac-input" name="{{ $name }}" type="text" placeholder="{{ $placeholder }}" />
