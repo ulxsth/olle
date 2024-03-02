@@ -4,7 +4,7 @@
     <p>{{ session('ryokan') }}</p>
     <form action="/onsen" method="post">
         @csrf
-        <x-auto-complete-input type="onsen" placeholder="温泉名を入力" />
+        <x-auto-complete-input name="onsen" placeholder="温泉名を入力" />
 
         <button type="submit">next</button>
     </form>
