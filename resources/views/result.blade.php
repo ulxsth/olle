@@ -3,7 +3,9 @@
 @section('content')
     <div class="container">
         <p>所要時間：<span id="duration"></span></p>
-        <div id="map"></div>
+        <div id="map" style="width: 100%; height: 100vh"></div>
+        <input type="hidden" id="start" value="{{ session('ryokan') }}">
+        <input type="hidden" id="end" value="{{ session('onsen') }}">
     </div>
 @endsection
 
