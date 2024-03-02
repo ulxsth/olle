@@ -21,6 +21,7 @@ Route::redirect('/', '/ryokan');
 // ryokan
 // -------------------------------------------------
 Route::get('/ryokan', function () {
+    abort(405);//エラーコードデバック用
     return view('ryokan');
 })->name('ryokan');
 
