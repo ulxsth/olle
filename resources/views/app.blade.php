@@ -10,13 +10,10 @@
 
 <body>
     @yield('content')
-
-    {{-- scripts --}}
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUWAFJOooqQ8qrcHK-5C-a_AlJKt2zjcc&callback=initMap&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"
-      defer>
-    </script>
-    <script src="{{ asset("/js/google-map-api.js") }}"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUWAFJOooqQ8qrcHK-5C-a_AlJKt2zjcc&callback=initMap&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"
+        defer></script>
+    <script src="{{ asset('/js/google-map-api.js') }}"></script>
 </body>
 
 </html>
