@@ -13,11 +13,11 @@ class RyokanController extends Controller
      */
     public function storeInSession(Request $request)
     {
-        $this->validate($request, ['lat' => 'required', 'lng' => 'required',]);
+        $this->validate($request, ['pac-lng' => 'required', 'pac-lat' => 'required',]);
 
         $request->session()->put('ryokan', [
-            'lat' => $request->lat,
-            'lng' => $request->lng,
+            'lat' => $request->input('pac-lng'),
+            'lng' => $request->input('pac-lat'),
         ]);
     }
 }
