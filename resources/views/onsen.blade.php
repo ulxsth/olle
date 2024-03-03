@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-    <p>{{ session('ryokan') }}</p>
     <form action="/onsen" method="post">
         @csrf
         <x-auto-complete-input name="onsen" placeholder="温泉名を入力" />
