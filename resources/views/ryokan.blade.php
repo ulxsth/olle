@@ -1,5 +1,6 @@
 @extends('app')
 
+@include('components.header')
 @section('content')
 <form action="/ryokan" method="post">
     @csrf
