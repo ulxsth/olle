@@ -12,10 +12,7 @@ class OnsenController extends Controller
      * @return void
      */
     public function storeInSession(Request $request) {
-        $request->validate([
-            'lat' => 'required|numeric',
-            'lng' => 'required|numeric',
-        ]);
+        // TODO: バリデーション
 
         $request->session()->put('onsen', [
             'lat' => $request->lat,
