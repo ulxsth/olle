@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>@yield('title')</title>
+<title>Error page</title>
 <style>
     body {
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -21,6 +21,7 @@
 </style>
 </head>
 <body class="antialiased">
-    <img src="https://http.cat/@yield('code')" alt="HTTP Cat">
+    <img src="https://http.cat/{{$errorCode}}" alt="HTTP Cat">
 </body>
 </html>
+
