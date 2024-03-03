@@ -3,8 +3,13 @@ var directionsRenderer;
 var distanceMatrixService;
 var map;
 
-const start = { lat: document.getElementById("ryokan-lat").value, lng: document.getElementById("ryokan-lng").value };
-const end = { lat: document.getElementById("onsen-lat").value, lng: document.getElementById("onsen-lng").value };
+const ryokanLat = parseFloat(document.getElementById("ryokan-lat").value);
+const ryokanLng = parseFloat(document.getElementById("ryokan-lng").value);
+const onsenLat = parseFloat(document.getElementById("onsen-lat").value);
+const onsenLng = parseFloat(document.getElementById("onsen-lng").value);
+
+const start = { lat: ryokanLat, lng: ryokanLng };
+const end = { lat: onsenLat, lng: onsenLng };
 
 function initMap() {
   // APIインスタンスを生成
