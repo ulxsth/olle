@@ -13,7 +13,7 @@ class RyokanController extends Controller
      */
     public function storeInSession(Request $request)
     {
-        // TODO: バリデーション
+        $this->validate($request, ['lat' => 'required', 'lng' => 'required',]);
 
         $request->session()->put('ryokan', [
             'lat' => $request->lat,
