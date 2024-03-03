@@ -6,8 +6,9 @@
         <x-auto-complete-input name="onsen" placeholder="温泉名を入力" />
         <button type="submit">next</button>
 
-        <input type="hidden" id="pac-lat">
-        <input type="hidden" id="pac-lng">
+        {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
+        <input type="hidden" id="pac-lat" name="pac-lat">
+        <input type="hidden" id="pac-lng" name="pac-lng">
     </form>
 @endsection
 

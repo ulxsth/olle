@@ -6,8 +6,9 @@
         <x-auto-complete-input name="ryokan" placeholder="旅館名を入力" />
         <button type="submit">next</button>
 
-        <input type="hidden" id="pac-lat">
-        <input type="hidden" id="pac-lng">
+        {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
+        <input type="hidden" name="pac-lat" id="pac-lat">
+        <input type="hidden" name="pac-lng" id="pac-lng">
     </form>
 @endsection
 
