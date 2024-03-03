@@ -3,7 +3,7 @@ var directionsRenderer;
 var distanceMatrixService;
 var map;
 
-const start = [document.getElementById("ryokan-lat").value, document.getElementById("ryokan-lng").value];
+const start = { lat: document.getElementById("user-lat").value, lng: document.getElementById("user-lng").value };
 const end = { lat: document.getElementById("onsen-lat").value, lng: document.getElementById("onsen-lng").value };
 
 function initMap() {
