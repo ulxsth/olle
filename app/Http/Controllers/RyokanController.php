@@ -11,7 +11,16 @@ class RyokanController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return void
      */
-    public function storeInSession(Request $request) {
-        $request->session()->put('ryokan', $request->input('ryokan'));
+    public function storeInSession(Request $request)
+    {
+        $request->validate([
+            'lat' => 'required|numeric',
+            'lng' => 'required|numeric',
+        ]);
+
+        $request->session()->put('ryokan', [
+            'lat' => $request->lat,
+            'lng' => $request->lng,
+        ]);
     }
 }
