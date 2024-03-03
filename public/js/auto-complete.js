@@ -15,13 +15,11 @@ function initMap() {
 
   infowindow.setContent(infowindowContent);
 
-  // TODO: バリデーション（現在は表示のみ、フォーム送信の中断などは機能していない）
   autocomplete.addListener("place_changed", () => {
     const place = autocomplete.getPlace();
-    if (!place.geometry || !place.geometry.location) {
-      window.alert(
-        "No details available for input: '" + place.name + "'"
-      );
+    if (place.geometry.location) {
+      document.getElementById("pac-lat").value = place.geometry.location.lat();
+      document.getElementById("pac-lng").value = place.geometry.location.lng();
       return;
     }
   });

@@ -5,8 +5,10 @@
     <form action="/onsen" method="post">
         @csrf
         <x-auto-complete-input name="onsen" placeholder="温泉名を入力" />
-
         <button type="submit">next</button>
+
+        <input type="text" id="pac-lat" hidden>
+        <input type="text" id="pac-lng" hidden>
     </form>
 @endsection
 
