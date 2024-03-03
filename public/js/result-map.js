@@ -4,7 +4,7 @@ var distanceMatrixService;
 var map;
 
 const start = [document.getElementById("ryokan-lat").value, document.getElementById("ryokan-lng").value];
-const end = { lat: document.getElementById("pac-lat").value, lng: document.getElementById("pac-lng").value };
+const end = { lat: document.getElementById("onsen-lat").value, lng: document.getElementById("onsen-lng").value };
 
 function initMap() {
   // APIインスタンスを生成
