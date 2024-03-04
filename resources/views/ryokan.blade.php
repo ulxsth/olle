@@ -4,6 +4,7 @@
 @php
 $step = 1;
 $message = "旅館";
+$hidePrev = true;
 @endphp
 <form action="/ryokan" method="post">
     @csrf
