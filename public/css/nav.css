@@ -1,0 +1,40 @@
+.nav {
+    background-color: #ffffff;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nav__btn {
+    width: 150px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav__btn:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.nav__btn--prev {
+    color: #308c6e;
+    background-color: #d9d9d9;
+}
+
+.nav__btn--next {
+    color: #ffffff;
+    background-color: #308c6e;
+}

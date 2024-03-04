@@ -1,0 +1,200 @@
+.header {
+    height: 120px;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+/* header-message */
+
+.header-message {
+    width: 70%;
+}
+
+.header-message__content {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #393c41;
+}
+
+/* circle-step 共通部分 */
+
+.circle-step__inner {
+    color: #393c41;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 19px 15px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.circle-step {
+    width: 30%;
+    flex-shrink: 0;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #308c6e;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* circle-step1 */
+
+.circle-step1::before {
+    background-color: #393c41;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+.circle-step1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    transform-origin: left 50px;
+    z-index: 3;
+    animation-name: rotate-circle-step1-right;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate-circle-step1-right {
+    0% {
+        transform: rotate(0deg);
+        background: #393c41;
+    }
+    100% {
+        transform: rotate(120deg);
+        background: #393c41;
+    }
+}
+
+/* circle-step2 */
+
+.circle-step2::before {
+    background-color: #393c41;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    transform-origin: right 50px;
+    z-index: 3;
+    animation-name: rotate-circle-step2-left;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.circle-step2::after {
+    background: #393c41;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    transform-origin: left 50px;
+    z-index: 3;
+    animation-name: rotate-circle-step2-right;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate-circle-step2-right {
+    0% {
+        transform: rotate(120deg);
+        background: #393c41;
+    }
+    50% {
+        transform: rotate(180deg);
+        background: #393c41;
+    }
+    50.01% {
+        transform: rotate(360deg);
+        background: #308c6e;
+    }
+    100% {
+        transform: rotate(360deg);
+        background: #308c6e;
+    }
+}
+
+@keyframes rotate-circle-step2-left {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(60deg);
+    }
+}
+
+/* circle-step3 */
+
+.circle-step3::before {
+    background-color: #393c41;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    transform-origin: right 50px;
+    z-index: 3;
+    animation-name: rotate-circle-step3-left;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.circle-step3::after {
+    background: #308c6e;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+}
+
+@keyframes rotate-circle-step3-left {
+    0% {
+        transform: rotate(60deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
