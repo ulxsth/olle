@@ -1,9 +1,7 @@
 @php
     $uri = \Illuminate\Support\Facades\Request::path();
-
     $step = 1;
     $message = '旅館';
-
     switch ($uri) {
         case 'onsen':
             $step = 2;

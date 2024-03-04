@@ -1,15 +1,16 @@
 @extends('app')
 
 @section('content')
-    <form action="/ryokan" method="post">
+<main class="main">
+    <form action="/ryokan" method="post" id="nav-submit">
         @csrf
         <x-auto-complete-input name="ryokan" placeholder="旅館名を入力" />
-        <button type="submit">next</button>
-
+        
         {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
         <input type="hidden" name="pac-lat" id="pac-lat">
         <input type="hidden" name="pac-lng" id="pac-lng">
     </form>
+</main>
 @endsection
 
 @section('script')
