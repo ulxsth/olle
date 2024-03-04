@@ -1,5 +1,6 @@
 @extends('app')
 
+
 @section('content')
     <form action="/onsen" method="post">
         @csrf
