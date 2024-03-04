@@ -16,22 +16,10 @@ function initMap() {
   infowindow.setContent(infowindowContent);
 
   autocomplete.addListener("place_changed", () => {
-    infowindow.close();
-
     const place = autocomplete.getPlace();
-
-    if (!place.geometry || !place.geometry.location) {
-      window.alert(
-        "No details available for input: '" + place.name + "'"
-      );
-      return;
-    }
-  });
-  
-  autocomplete.addListener('place_changed', function () {
-    var place = autocomplete.getPlace();
-    if (!place.geometry) {
-      window.alert("No details available for input: '" + place.name + "'");
+    if (place.geometry.location) {
+      document.getElementById("pac-lat").value = place.geometry.location.lat();
+      document.getElementById("pac-lng").value = place.geometry.location.lng();
       return;
     }
   });
