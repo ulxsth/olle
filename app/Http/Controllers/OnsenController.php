@@ -12,6 +12,11 @@ class OnsenController extends Controller
      * @return void
      */
     public function storeInSession(Request $request) {
-        $request->session()->put('onsen', $request->input('onsen'));
+        $this->validate($request, ['pac-lng' => 'required', 'pac-lat' => 'required',]);
+
+        $request->session()->put('onsen', [
+            'lat' => $request->input('pac-lat'),
+            'lng' => $request->input('pac-lng'),
+        ]);
     }
 }
