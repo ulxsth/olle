@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    @include('components.header')
     @yield('content')
     @yield('script')
   </body>
