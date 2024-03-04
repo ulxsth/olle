@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
   </head>
 
-<body>
-    <x-header :step="$step" :message="$message" />
-    <x-nav :hidePrev="$hidePrev" />
+  <body>
     @yield('content')
       <script
         src="https://maps.googleapis.com/maps/api/js?key= {{ env("GOOGLE_MAP_API_KEY") }} &callback=initMap&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"

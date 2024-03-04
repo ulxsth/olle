@@ -2,7 +2,7 @@
     @if ($hidePrev)
         <div></div>
     @else
-        <div class="nav__btn nav__btn--prev">戻る</div>
+        <button class="nav__btn nav__btn--prev">戻る</button>
     @endif
-    <div class="nav__btn nav__btn--next">次に進む</div>
+    <button type="submit" class="nav__btn nav__btn--next">次に進む</button>
 </nav>
