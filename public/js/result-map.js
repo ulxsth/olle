@@ -11,6 +11,14 @@ const onsenLng = parseFloat(document.getElementById("onsen-lng").value);
 const start = { lat: ryokanLat, lng: ryokanLng };
 const end = { lat: onsenLat, lng: onsenLng };
 
+var travelModeRadioButtons = document.getElementsByName('travel-mode');
+travelModeRadioButtons.forEach((radioButton) => {
+  radioButton.addEventListener('change', (e) => {
+    const travelMode = e.target.value;
+    setLocation(end.lat, end.lng, travelMode);
+  });
+});
+
 /**
  * マップのレンダリングを行うコールバック関数。
  * Google Maps APIの読み込みが完了すると呼び出される。

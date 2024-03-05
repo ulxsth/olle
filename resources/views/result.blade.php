@@ -3,6 +3,10 @@
 @section('content')
     <div class="container">
         <p>所要時間：<span id="duration"></span></p>
+        <input selected type="radio" name="travel-mode" value="WALKING">🏃
+        <input type="radio" name="travel-mode" value="BICYCLING">🚲
+        <input type="radio" name="travel-mode" value="DRIVING">🚗
+        <input type="radio" name="travel-mode" value="TRANSIT">🚌
         <div id="map" style="width: 100%; height: 100vh"></div>
         <input type="hidden" id="ryokan-lat" value="{{ session('ryokan.lat') }}">
         <input type="hidden" id="ryokan-lng" value="{{ session('ryokan.lng') }}">
