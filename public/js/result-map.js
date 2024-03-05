@@ -11,28 +11,31 @@ const onsenLng = parseFloat(document.getElementById("onsen-lng").value);
 const start = { lat: ryokanLat, lng: ryokanLng };
 const end = { lat: onsenLat, lng: onsenLng };
 
+/**
+ * マップのレンダリングを行うコールバック関数。
+ * Google Maps APIの読み込みが完了すると呼び出される。
+ * @param {void}
+ * @return {void}
+ */
 function initMap() {
-  // APIインスタンスを生成
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer();
   distanceMatrixService = new google.maps.DistanceMatrixService();
 
-  // マップの初期表示を設定
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: start
   });
-
-  // レンダラーをマップに設定
   directionsRenderer.setMap(map);
-
-  // 上で設定したオプションを適用
   directionsRenderer.setOptions({ suppressMarkers: true });
-
-  // ルートの取得
   setLocation(end.lat, end.lng);
 }
 
+/**
+ * 緯度経度を指定し、その地点にマーカーを設置する。
+ * @param {float} lat 地点の緯度
+ * @param {float} lng 地点の経度
+ */
 function setLocation(lat, lng) {
   // 所要時間の取得
   distanceMatrixService.getDistanceMatrix(
@@ -43,7 +46,7 @@ function setLocation(lat, lng) {
       unitSystem: google.maps.UnitSystem.METRIC,
       avoidHighways: false,
       avoidTolls: false,
-    }, timeRequired);
+    }, calcDuration);
 
   // ルートの取得
   directionsService.route(
@@ -59,8 +62,7 @@ function setLocation(lat, lng) {
     .catch((e) => window.alert('Directions request failed due to ' + e));
 }
 
-
-function timeRequired(response, status) {
+function calcDuration(response, status) {
   if (status !== 'OK') {
     window.alert('Error was: ' + status);
     return;
