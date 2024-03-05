@@ -7,7 +7,7 @@
             $step = 2;
             $message = '温泉';
             break;
-        case 'result':
+        case 'date':
             $step = 3;
             $message = '日付';
             break;

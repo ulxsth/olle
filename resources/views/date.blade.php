@@ -1,10 +1,10 @@
 @extends("app")
 
 @section("content")
-<form action="/date" method="post">
-    @csrf
-    <label for="date">日付</label>
-    <input type="date" name="date" id="date">
-    <button type="submit">next</button>
-</form>
+<main class="main">
+    <form action="/date" method="post" id="nav-submit">
+        @csrf
+        <input type="date" name="date" id="date" class="search-input">
+    </form>
+</main>
 @endsection
