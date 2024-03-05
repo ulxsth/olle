@@ -32,17 +32,17 @@ function initMap() {
 }
 
 /**
- * 緯度経度を指定し、その地点にマーカーを設置する。
+ * 緯度経度を指定し、所要時間を計算する。
  * @param {float} lat 地点の緯度
  * @param {float} lng 地点の経度
  */
-function setLocation(lat, lng) {
+function setLocation(lat, lng, travelMode = 'DRIVING') {
   // 所要時間の取得
   distanceMatrixService.getDistanceMatrix(
     {
       origins: [start],
       destinations: [end],
-      travelMode: 'DRIVING',
+      travelMode: travelMode,
       unitSystem: google.maps.UnitSystem.METRIC,
       avoidHighways: false,
       avoidTolls: false,
@@ -51,9 +51,9 @@ function setLocation(lat, lng) {
   // ルートの取得
   directionsService.route(
     {
-      origin: start,                              // 出発地
-      destination: { lat: lat, lng: lng },        // 目的地
-      travelMode: 'DRIVING',                      // 交通手段
+      origin: start,
+      destination: { lat: lat, lng: lng },
+      travelMode: travelMode,
     })
     .then((response) => {
       directionsRenderer.setDirections(response);
