@@ -2,10 +2,12 @@
 
 @section('content')
 <main class="main">
+    {{--フォーム送信を行うためにid追加--}}
     <form action="/ryokan" method="post" id="nav-submit">
         @csrf
-        <x-auto-complete-input name="ryokan" placeholder="旅館名を入力" />
-        
+        <x-auto-complete-input name="ryokan" id="pac-input" placeholder="旅館名を入力" />
+        {{-- エラーメッセージ表示部分 --}}
+        <div id="error-display"></div>
         {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
         <input type="hidden" name="pac-lat" id="pac-lat">
         <input type="hidden" name="pac-lng" id="pac-lng">
