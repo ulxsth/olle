@@ -36,7 +36,7 @@ function initMap() {
   });
   directionsRenderer.setMap(map);
   directionsRenderer.setOptions({ suppressMarkers: true });
-  setLocation(end.lat, end.lng);
+  setLocation(end.lat, end.lng, "WALKING");
 }
 
 /**
@@ -67,7 +67,9 @@ function setLocation(lat, lng, travelMode = 'DRIVING') {
       directionsRenderer.setDirections(response);
       map.panTo(new google.maps.LatLng(lat, lng));
     })
-    .catch((e) => window.alert('Directions request failed due to ' + e));
+    .catch((e) => {
+      window.alert('ルートが存在しませんでした。別の移動方法をお試しください。');
+    });
 }
 
 function calcDuration(response, status) {
