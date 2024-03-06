@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class OnsenController extends Controller
+class StartController extends Controller
 {
     /**
-     * セッションに通過地点の情報を格納する。
+     * セッションに出発地点の情報を格納する。
      * @param \Illuminate\Http\Request $request
      * @return void
      */
@@ -15,7 +15,7 @@ class OnsenController extends Controller
     {
         $this->validate($request, ['pac-lng' => 'required', 'pac-lat' => 'required',]);
 
-        $request->session()->put('flag', [
+        $request->session()->put('start', [
             'lat' => $request->input('pac-lat'),
             'lng' => $request->input('pac-lng'),
         ]);
