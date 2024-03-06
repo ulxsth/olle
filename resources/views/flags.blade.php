@@ -3,7 +3,7 @@
 
 @section('content')
     <main class="main">
-        <form action="/flag" method="post" id="nav-submit">
+        <form action="/flags" method="post" id="nav-submit">
             @csrf
             <x-auto-complete-input name="flag" placeholder="通過地点の建物名を入力..." />
 
