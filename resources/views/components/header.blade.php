@@ -3,7 +3,7 @@
     $step = 1;
     $message = '出発地点';
     switch ($uri) {
-        case 'flag':
+        case 'flags':
             $step = 2;
             $message = '通過地点';
             break;
