@@ -8,10 +8,10 @@
         <input type="radio" name="travel-mode" value="DRIVING">🚗
         <input type="radio" name="travel-mode" value="TRANSIT">🚌
         <div id="map" style="width: 100%; height: 100vh"></div>
-        <input type="hidden" id="ryokan-lat" value="{{ session('ryokan.lat') }}">
-        <input type="hidden" id="ryokan-lng" value="{{ session('ryokan.lng') }}">
-        <input type="hidden" id="onsen-lat" value="{{ session('onsen.lat') }}">
-        <input type="hidden" id="onsen-lng" value="{{ session('onsen.lng') }}">
+        <input type="hidden" id="start-lat" value="{{ session('start.lat') }}">
+        <input type="hidden" id="start-lng" value="{{ session('start.lng') }}">
+        <input type="hidden" id="flag-lat" value="{{ session('flag.lat') }}">
+        <input type="hidden" id="flag-lng" value="{{ session('flag.lng') }}">
     </div>
 @endsection
 

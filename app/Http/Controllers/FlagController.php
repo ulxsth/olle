@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class RyokanController extends Controller
 {
     /**
-     * セッションに旅館の情報を格納する。
+     * セッションに出発地点の情報を格納する。
      * @param \Illuminate\Http\Request $request
      * @return void
      */
@@ -15,7 +15,7 @@ class RyokanController extends Controller
     {
         $this->validate($request, ['pac-lng' => 'required', 'pac-lat' => 'required',]);
 
-        $request->session()->put('ryokan', [
+        $request->session()->put('start', [
             'lat' => $request->input('pac-lat'),
             'lng' => $request->input('pac-lng'),
         ]);

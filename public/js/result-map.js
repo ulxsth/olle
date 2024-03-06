@@ -3,13 +3,13 @@ var directionsRenderer;
 var distanceMatrixService;
 var map;
 
-const ryokanLat = parseFloat(document.getElementById("ryokan-lat").value);
-const ryokanLng = parseFloat(document.getElementById("ryokan-lng").value);
-const onsenLat = parseFloat(document.getElementById("onsen-lat").value);
-const onsenLng = parseFloat(document.getElementById("onsen-lng").value);
+const startLat = parseFloat(document.getElementById("start-lat").value);
+const startLng = parseFloat(document.getElementById("start-lng").value);
+const flagLat = parseFloat(document.getElementById("flag-lat").value);
+const flagLng = parseFloat(document.getElementById("flag-lng").value);
 
-const start = { lat: ryokanLat, lng: ryokanLng };
-const end = { lat: onsenLat, lng: onsenLng };
+const start = { lat: startLat, lng: startLng };
+const end = { lat: flagLat, lng: flagLng };
 
 var travelModeRadioButtons = document.getElementsByName('travel-mode');
 travelModeRadioButtons.forEach((radioButton) => {

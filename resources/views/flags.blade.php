@@ -1,14 +1,15 @@
 @extends('app')
 
+
 @section('content')
     <main class="main">
-        <form action="/ryokan" method="post" id="nav-submit">
+        <form action="/flag" method="post" id="nav-submit">
             @csrf
-            <x-auto-complete-input name="ryokan" placeholder="出発地点の建物名を入力..." />
+            <x-auto-complete-input name="flag" placeholder="通過地点の建物名を入力..." />
 
             {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
-            <input type="hidden" name="pac-lat" id="pac-lat">
-            <input type="hidden" name="pac-lng" id="pac-lng">
+            <input type="hidden" id="pac-lat" name="pac-lat">
+            <input type="hidden" id="pac-lng" name="pac-lng">
         </form>
     </main>
 @endsection

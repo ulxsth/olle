@@ -16,30 +16,30 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::redirect('/', '/ryokan');
+Route::redirect('/', '/start');
 
-// ryokan
+// start
 // -------------------------------------------------
-Route::get('/ryokan', function () {
-    return view('ryokan');
-})->name('ryokan');
+Route::get('/start', function () {
+    return view('start');
+})->name('start');
 
-Route::post('/ryokan', function (Request $request) {
-    $ryokanController = new RyokanController();
-    $ryokanController->storeInSession($request);
-    return redirect()->route('onsen');
+Route::post('/start', function (Request $request) {
+    $startController = new RyokanController();
+    $startController->storeInSession($request);
+    return redirect()->route('flag');
 });
 
 
-// onsen
+// flag
 // -------------------------------------------------
-Route::get('/onsen', function () {
-    return view('onsen');
-})->name('onsen');
+Route::get('/flag', function () {
+    return view('flag');
+})->name('flag');
 
-Route::post('/onsen', function (Request $request) {
-    $onsenController = new OnsenController();
-    $onsenController->storeInSession($request);
+Route::post('/flag', function (Request $request) {
+    $flagController = new OnsenController();
+    $flagController->storeInSession($request);
     return redirect()->route('date');
 });
 
