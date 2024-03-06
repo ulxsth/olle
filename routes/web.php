@@ -1,6 +1,6 @@
 <?php
-use App\Http\Controllers\RyokanController;
-use App\Http\Controllers\OnsenController;
+use App\Http\Controllers\StartController;
+use App\Http\Controllers\FlagController;
 use App\Http\Controllers\DateController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -25,20 +25,20 @@ Route::get('/start', function () {
 })->name('start');
 
 Route::post('/start', function (Request $request) {
-    $startController = new RyokanController();
+    $startController = new StartController();
     $startController->storeInSession($request);
-    return redirect()->route('flag');
+    return redirect()->route('flags');
 });
 
 
 // flag
 // -------------------------------------------------
-Route::get('/flag', function () {
-    return view('flag');
-})->name('flag');
+Route::get('/flags', function () {
+    return view('flags');
+})->name('flags');
 
-Route::post('/flag', function (Request $request) {
-    $flagController = new OnsenController();
+Route::post('/flags', function (Request $request) {
+    $flagController = new FlagController();
     $flagController->storeInSession($request);
     return redirect()->route('date');
 });
