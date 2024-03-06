@@ -5,8 +5,8 @@
 <main class="main">
     <form action="/onsen" method="post" id="nav-submit">
         @csrf
-        <x-auto-complete-input name="onsen" placeholder="温泉名を入力" />
-        
+        <x-auto-complete-input name="onsen" placeholder="通過地点の建物名を入力..." />
+
         {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
         <input type="hidden" id="pac-lat" name="pac-lat">
         <input type="hidden" id="pac-lng" name="pac-lng">

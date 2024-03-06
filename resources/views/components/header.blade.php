@@ -1,11 +1,11 @@
 @php
     $uri = \Illuminate\Support\Facades\Request::path();
     $step = 1;
-    $message = '旅館';
+    $message = '出発地点';
     switch ($uri) {
         case 'onsen':
             $step = 2;
-            $message = '温泉';
+            $message = '通過地点';
             break;
         case 'date':
             $step = 3;
