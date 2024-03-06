@@ -1,7 +1,7 @@
 @php
     $uri = \Illuminate\Support\Facades\Request::path();
     $hidePrevBtn = false;
-    if($uri === 'ryokan') {
+    if ($uri === 'start') {
         $hidePrevBtn = true;
     }
 @endphp
