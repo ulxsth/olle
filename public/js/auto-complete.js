@@ -1,7 +1,9 @@
 function initMap() {
+
   const input = document.getElementById("pac-input");
   const latInput = document.getElementById("pac-lat");
   const lngInput = document.getElementById("pac-lng");
+  const date = document.getElementById("date");
   const errorDisplay = document.getElementById("error-display");
 
   const options = {
@@ -23,23 +25,15 @@ function initMap() {
     lngInput.value = place.geometry.location.lng();
   });
 
-  const form = document.getElementById("nav-submit");
-  const nextButton = document.getElementById("next-button");
-  const prevButton = document.getElementById("prev-button");
-
-  nextButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (!latInput.value || !lngInput.value) {
-      errorDisplay.textContent = "※有効な住所を入力してください。";
-      return;
-    }else{
+  function checkDate() {
+    const currentDate = new Date();
+    const selectedDate = new Date(date.value);
+    currentDate.setHours(0, 0, 0, 0);
+    if (!date.value || selectedDate.getTime() < currentDate.getTime()) {
+      errorDisplay.textContent = "※本日以降の日付を入力してください";
+    } else {
       errorDisplay.textContent = "";
     }
-    form.submit();
-  });
-
-  prevButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    history.back();
-  });
+  }
+  date.addEventListener("change", checkDate);
 }
