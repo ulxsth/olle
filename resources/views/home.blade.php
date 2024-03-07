@@ -11,14 +11,21 @@
 <body>
   <header></header>
   <main>
-    <div class="keyvisual">
-      
+    <div class="keyvisual"></div>
+    <div class="description">
+      <h2 class="description__title">"olle / オルレ" とは？</h2>
+      <p>
+        旅先での醍醐味、散策。<br>
+        "olle / オルレ" は、あなたが寄りたい場所からルートを計算し、あなたに提案してくれます。
+        あなただけのオルレコースを作成しましょう。
+        <a href="/start" class="btn__start">さっそく使ってみる</a>
+      </p>
     </div>
-    <div class="description"></div>
-    <div class="howto"></div>
-    <div class="image-slide"></div>
+    <div class="howto">
+      <a href="/start" class="btn__start">さっそく使ってみる</a>
+    </div>
   </main>
-  <footer>©2024 Gabaithon Team 5</footer>
+  <footer>©2024 Gabaithon Spring Team 5</footer>
 </body>
 
 </html>
