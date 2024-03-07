@@ -14,13 +14,15 @@
         {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
         <input type="hidden" id="pac-lat" name="pac-lat">
         <input type="hidden" id="pac-lng" name="pac-lng">
+        <input type="hidden" id="start-lat" value="">
+        <input type="hidden" id="start-lng" value="">
     </form>
     <div class="flags-wrap">
         <div class="flag">
             <div class="flag__header">
                 <h3 class="flag__checkpoint">出発地点</h3>
             </div>
-            <p class="flag__name">hogehoge温泉</p>
+            <p class="flag__name" id="startlocation"></p>
         </div>
     </div>
 </main>
@@ -34,4 +36,5 @@
     <script src="{{ asset('js/auto-complete.js') }}"></script>
     <script src="{{ asset('js/MapbuttonAction.js') }}"></script>
     <script src="{{ asset('js/add-flag.js') }}"></script>
+    <script src="{{ asset('js/Startgetlocation.js') }}"></script>
 @endsection
