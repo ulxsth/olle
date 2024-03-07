@@ -42,7 +42,7 @@ Route::get('/flags', function () {
 Route::post('/flags', function (Request $request) {
     $flagController = new FlagController();
     $flagController->storeInSession($request);
-    return redirect()->route('date');
+    return redirect()->route('result');
 });
 
 

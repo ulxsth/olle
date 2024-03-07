@@ -1,7 +1,11 @@
 const addButton = document.getElementById("add-flag");
 let deleteButtons = [];
+const nextButton = document.getElementById("next-button");
+const firstLat = document.getElementById("pac-lat").value;
+const firstLng = document.getElementById("pac-lng").value;
 
 let count = 1;
+
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
     const flagsLength = document.querySelectorAll(".flag").length;
@@ -14,6 +18,14 @@ addButton.addEventListener("click", (event) => {
         alert("通過地点を入力してください");
         return;
     }
+
+    // ここでカウンターを使用して、id 属性の値を動的に生成
+    const latInputId = `pac-lat-${count}`;
+    const lngInputId = `pac-lng-${count}`;
+    
+    const latInput = document.getElementById("pac-lat").value;
+    const lngInput = document.getElementById("pac-lng").value;
+
     const addFlag = `
         <div class="flag">
             <div class="flag__header">
@@ -21,6 +33,10 @@ addButton.addEventListener("click", (event) => {
                 <button class="flag__delete-btn" id="delete-btn-${count}" >削除</button>
             </div>
             <p class="flag__name">${inputValue}</p>
+            <div class="place-wrap">
+                <input type="hidden" name="pac-lat" id="${latInputId}" value=${latInput}>
+                <input type="hidden" name="pac-lng" id="${lngInputId}" value=${lngInput}>
+            </div>
         </div>
     `;
 
@@ -54,4 +70,19 @@ addButton.addEventListener("click", (event) => {
             }
         });
     });
+});
+
+nextButton.addEventListener("click", (event) => {
+    localStorage.clear();
+    const places = document.querySelectorAll(".place-wrap");
+    let arrayPlaces = Array.from(places).map((place) => {
+        const lat = place.querySelector('input[name="pac-lat"]').value;
+        const lng = place.querySelector('input[name="pac-lng"]').value;
+        return [lat, lng];
+    });
+    arrayPlaces = [[firstLat, firstLng], ...arrayPlaces];
+    if (window.localStorage) {
+        let json = JSON.stringify(arrayPlaces, undefined, 1);
+        localStorage.setItem('location', json);
+    }
 });
