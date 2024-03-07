@@ -2,10 +2,12 @@
 
 
 @section('content')
+
 <main class="flags-main">
     <form action="/flag" method="post" id="nav-submit" class="search-wrap">
         @csrf
         <x-auto-complete-input name="flag" placeholder="通過地点の建物名を入力..." />
+        <div id="error-display"></div>
         <button class="search-btn" id="add-flag">追加</button>
 
 
@@ -30,5 +32,6 @@
         src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_API_KEY') }}&callback=initMap&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"
         defer></script>
     <script src="{{ asset('js/auto-complete.js') }}"></script>
+    <script src="{{ asset('js/MapbuttonAction.js') }}"></script>
     <script src="{{ asset('js/add-flag.js') }}"></script>
 @endsection
