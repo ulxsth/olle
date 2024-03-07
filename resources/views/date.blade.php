@@ -1,14 +1,12 @@
 @extends('app')
 
-@section('content')
-{{--フォーム送信を行うためにid追加--}}
-<form action="/date" method="post" id="nav-submit">
-    @csrf
-    {{-- エラーメッセージ表示部分 --}}
-    <div id="error-display"></div>
-    <label for="date">日付</label>
-    <input type="date" name="date" id="date">
-</form>
+@section("content")
+<main class="main">
+    <form action="/date" method="post" id="nav-submit">
+        @csrf
+        <input type="date" name="date" id="date" class="search-input">
+    </form>
+</main>
 @endsection
 
 @section('script')

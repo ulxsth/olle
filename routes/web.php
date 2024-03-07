@@ -1,6 +1,6 @@
 <?php
-use App\Http\Controllers\RyokanController;
-use App\Http\Controllers\OnsenController;
+use App\Http\Controllers\StartController;
+use App\Http\Controllers\FlagController;
 use App\Http\Controllers\DateController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -16,30 +16,30 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::redirect('/', '/ryokan');
+Route::redirect('/', '/start');
 
-// ryokan
+// start
 // -------------------------------------------------
-Route::get('/ryokan', function () {
-    return view('ryokan');
-})->name('ryokan');
+Route::get('/start', function () {
+    return view('start');
+})->name('start');
 
-Route::post('/ryokan', function (Request $request) {
-    $ryokanController = new RyokanController();
-    $ryokanController->storeInSession($request);
-    return redirect()->route('onsen');
+Route::post('/start', function (Request $request) {
+    $startController = new StartController();
+    $startController->storeInSession($request);
+    return redirect()->route('flags');
 });
 
 
-// onsen
+// flag
 // -------------------------------------------------
-Route::get('/onsen', function () {
-    return view('onsen');
-})->name('onsen');
+Route::get('/flags', function () {
+    return view('flags');
+})->name('flags');
 
-Route::post('/onsen', function (Request $request) {
-    $onsenController = new OnsenController();
-    $onsenController->storeInSession($request);
+Route::post('/flags', function (Request $request) {
+    $flagController = new FlagController();
+    $flagController->storeInSession($request);
     return redirect()->route('date');
 });
 
