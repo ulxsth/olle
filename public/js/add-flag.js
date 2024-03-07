@@ -10,6 +10,10 @@ addButton.addEventListener("click", (event) => {
         return;
     }
     let inputValue = document.getElementById("pac-input").value;
+    if (inputValue === "") {
+        alert("通過地点を入力してください");
+        return;
+    }
     const flagHeader = `第${flagsLength}通過地点`;
     const addFlag = `
         <div class="flag">
