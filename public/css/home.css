@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --color-text: #308C6E;
+  --color-background: #EDE8E2;
+}
+
+main {
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+footer {
+  color: white;
+  text-align: center;
+  line-height: 3rem;
+  background: #441515;
+}
