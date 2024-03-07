@@ -19,56 +19,59 @@ addButton.addEventListener("click", (event) => {
         return;
     }
 
-    // ここでカウンターを使用して、id 属性の値を動的に生成
-    const latInputId = `pac-lat-${count}`;
-    const lngInputId = `pac-lng-${count}`;
-    
-    const latInput = document.getElementById("pac-lat").value;
-    const lngInput = document.getElementById("pac-lng").value;
+    geocodeAddress(inputValue).then((location) => {
+        const latInputId = `pac-lat-${count}`;
+        const lngInputId = `pac-lng-${count}`;
+        
+        const latInput = location.lat();
+        const lngInput = location.lng();
 
-    const addFlag = `
-        <div class="flag">
-            <div class="flag__header">
-                <h3 class="flag__checkpoint">到着地点</h3>
-                <button class="flag__delete-btn" id="delete-btn-${count}" >削除</button>
+        const addFlag = `
+            <div class="flag">
+                <div class="flag__header">
+                    <h3 class="flag__checkpoint">到着地点</h3>
+                    <button class="flag__delete-btn" id="delete-btn-${count}" >削除</button>
+                </div>
+                <p class="flag__name">${inputValue}</p>
+                <div class="place-wrap">
+                    <input type="hidden" name="pac-lat" id="${latInputId}" value=${latInput}>
+                    <input type="hidden" name="pac-lng" id="${lngInputId}" value=${lngInput}>
+                </div>
             </div>
-            <p class="flag__name">${inputValue}</p>
-            <div class="place-wrap">
-                <input type="hidden" name="pac-lat" id="${latInputId}" value=${latInput}>
-                <input type="hidden" name="pac-lng" id="${lngInputId}" value=${lngInput}>
-            </div>
-        </div>
-    `;
+        `;
 
-    count++;
+        count++;
 
-    const flagsWrap = document.querySelector(".flags-wrap");
-    flagsWrap.innerHTML += addFlag;
-    document.getElementById("pac-input").value = "";
+        const flagsWrap = document.querySelector(".flags-wrap");
+        flagsWrap.innerHTML += addFlag;
+        document.getElementById("pac-input").value = "";
 
-    const flags = document.querySelectorAll(".flag");
-    flags.forEach((flag, index) => {
-        const checkpoint = flag.querySelector(".flag__checkpoint");
-        if (index === 0) {
-            checkpoint.textContent = "出発地点";
-        } else if (index < flags.length - 1) {
-            checkpoint.textContent = `第${index}通過地点`;
-        } else {
-            checkpoint.textContent = "到着地点";
-        }
-    });
-
-    deleteButtons = document.querySelectorAll(".flag__delete-btn");
-
-    deleteButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-            const deleteButton = event.target;
-            const flagElement = deleteButton.closest(".flag");
-            if (flagElement) {
-                flagElement.remove();
+        const flags = document.querySelectorAll(".flag");
+        flags.forEach((flag, index) => {
+            const checkpoint = flag.querySelector(".flag__checkpoint");
+            if (index === 0) {
+                checkpoint.textContent = "出発地点";
+            } else if (index < flags.length - 1) {
+                checkpoint.textContent = `第${index}通過地点`;
+            } else {
+                checkpoint.textContent = "到着地点";
             }
         });
+
+        deleteButtons = document.querySelectorAll(".flag__delete-btn");
+
+        deleteButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+                event.preventDefault();
+                const deleteButton = event.target;
+                const flagElement = deleteButton.closest(".flag");
+                if (flagElement) {
+                    flagElement.remove();
+                }
+            });
+        });
+    }).catch((error) => {
+        alert(error.message);
     });
 });
 
@@ -86,3 +89,25 @@ nextButton.addEventListener("click", (event) => {
         localStorage.setItem('location', json);
     }
 });
+
+function geocodeAddress(address) {
+    return new Promise((resolve, reject) => {
+        const geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: address }, (results, status) => {
+            if (status === "OK") {
+                const location = results[0].geometry.location;
+                const lat = location.lat();
+                const lng = location.lng();
+                // auto-complete.jsの範囲内かどうかチェック
+                if (lat >= 33.019005 && lat <= 33.322097 && lng >= 130.092926 && lng <= 130.698717) {
+                    resolve(location);
+                } else {
+                    reject(new Error("検索範囲外です"));
+                }
+            } else {
+                reject(new Error("住所が見つかりませんでした"));
+            }
+        });
+    });
+}
+
