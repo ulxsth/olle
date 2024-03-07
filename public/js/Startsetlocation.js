@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    localStorage.clear();
+
     const form = document.getElementById("nav-submit");
     const nextButton = document.getElementById("next-button");
     nextButton.addEventListener("click", (event) => {
@@ -10,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const lngInput = document.getElementById("pac-lng");
         const lngValue = lngInput.value;
 
-        console.log(startValue, latValue, lngValue);
-
-        if(startValue != null&&latValue != null&&lngValue != null){
+        if(startValue != null && latValue != null && lngValue != null){
             localStorage.setItem("start", startValue);
             localStorage.setItem("pac-lat", latValue);
             localStorage.setItem("pac-lng", lngValue);

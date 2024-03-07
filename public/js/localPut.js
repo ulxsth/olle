@@ -1,11 +1,9 @@
-const addButton = getElementById("add-flag");
-const nextButton = document.getElementById("next-button");
-const Startlat = document.getElementById("start-lat");
-const Startlng = document.getElementById("start-lng");
-const cnt = 1;
-let waypoints = [9];
+let waypoints = [];
+const storedLat = localStorage.getItem("pac-lat");
+const storedLng = localStorage.getItem("pac-lng");
 
-waypoints[0] = Startlat,Startlng;
+waypoints.push([storedLat, storedLng]);
+
 function localPush(){
     if (window.localStorage) {
         let json = JSON.stringify(waypoints, undefined, 1);
@@ -13,21 +11,16 @@ function localPush(){
     }
 }
 
-addButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    const latInput = document.getElementById("pac-lat");
-    const lngInput = document.getElementById("pac-lng");
-    
-    waypoints[cnt] = latInput,lngInput;
-    cnt++;
-});
-
 nextButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (!latInput.value || !lngInput.value) {
-      return;
+    const latInputs = document.querySelectorAll(".pac-lat").value;
+    const lngInputs = document.querySelectorAll(".pac-lng").value;
+    console.log(latInputs);
+    console.log(lngInputs);
+
+    for (let i = 0; i < latInputs.length; i++) {
+        waypoints.push([latInputs[i].value, lngInputs[i].value]);
     }
+
+    console.log(waypoints);
     localPush();
 });
-
-
