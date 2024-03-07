@@ -4,10 +4,10 @@ function initMap() {
     fields: ["formatted_address", "geometry", "name"],
     strictBounds: true,
     bounds: {
-      north: 33.322097,
-      south: 33.019005,
-      west: 130.092926,
-      east: 130.698717,
+      north: 33.517534, 
+      south: 32.934236, 
+      west: 129.928003, 
+      east: 130.484793,
     },
   };
 

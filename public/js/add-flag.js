@@ -99,7 +99,7 @@ function geocodeAddress(address) {
                 const lat = location.lat();
                 const lng = location.lng();
                 // auto-complete.jsの範囲内かどうかチェック
-                if (lat >= 33.019005 && lat <= 33.322097 && lng >= 130.092926 && lng <= 130.698717) {
+                if (lat >= 32.934236 && lat <= 33.517534 && lng >= 129.928003 && lng <= 130.484793) {
                     resolve(location);
                 } else {
                     reject(new Error("検索範囲外です"));
