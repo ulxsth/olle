@@ -16,7 +16,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::redirect('/', '/start');
+Route::get("/", function () {
+    return view('home');
+});
 
 // start
 // -------------------------------------------------
