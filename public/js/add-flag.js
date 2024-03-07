@@ -3,9 +3,13 @@ let deleteButtons = [];
 
 let count = 1;
 addButton.addEventListener("click", (event) => {
-    let inputValue = document.getElementById("pac-input").value;
     event.preventDefault();
     const flagsLength = document.querySelectorAll(".flag").length;
+    if (flagsLength > 9) {
+        alert("通過地点は９つまでしか選べません");
+        return;
+    }
+    let inputValue = document.getElementById("pac-input").value;
     const flagHeader = `第${flagsLength}通過地点`;
     const addFlag = `
         <div class="flag">
