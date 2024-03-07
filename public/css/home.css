@@ -15,7 +15,7 @@ body {
 
 main {
   min-height: 100vh;
-  width: 90%;
+  /* width: 90%; */
   margin: 0 auto;
 }
 
@@ -35,7 +35,7 @@ footer {
   position: relative;
   display: block;
   width: 75%;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 1rem 2rem;
   font-size: 1.2rem;
   text-align: center;
@@ -55,8 +55,29 @@ footer {
   transition: 0.3s;
 }
 
+/* keyvisual */
+.keyvisual {
+  max-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--color-background);
+  background: url(../img/hero.jpg) no-repeat right center/cover;
+
+}
+
 /* description */
+.description {
+  margin-bottom: 2rem;
+}
+
 .description__title {
   margin-top: 3rem;
   text-align: center;
+}
+
+.description__text {
+  width: 80%;
+  margin: 0 auto;
 }
