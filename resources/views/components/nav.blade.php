@@ -10,7 +10,7 @@
     @if ($hidePrevBtn)
         <div></div>
     @else
-        <button class="nav__btn nav__btn--prev" onclick="window.history.back()">戻る</button>
+        <button class="nav__btn nav__btn--prev" id="prev-button" onclick="window.history.back()">戻る</button>
     @endif
-    <input type="submit" form="nav-submit" class="nav__btn nav__btn--next" value="次に進む" />
+    <input type="submit" form="nav-submit" id="next-button" class="nav__btn nav__btn--next" value="次に進む" />
 </nav>
