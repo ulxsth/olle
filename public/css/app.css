@@ -24,8 +24,8 @@ body {
     border-color: rgb(57, 60, 65, 0.5);
     border-radius: 1rem;
     height: 2.5rem;
-    width: 100%;
+    width: 85%;
     padding: 1.5rem;
-    font-size: 24px;
+    font-size: 1rem;
     font-weight: bold;
 }
