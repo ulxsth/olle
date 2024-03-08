@@ -1,15 +1,15 @@
 @php
     $uri = \Illuminate\Support\Facades\Request::path();
     $step = 1;
-    $message = '出発地点';
+    $message = '出発地点を選んでください';
     switch ($uri) {
         case 'flags':
             $step = 2;
-            $message = '通過地点';
+            $message = '通過地点を選んでください';
             break;
-        case 'date':
+        case 'result':
             $step = 3;
-            $message = '日付';
+            $message = '結果を表示しています';
             break;
     }
 @endphp
@@ -19,6 +19,6 @@
         <div class="circle-step__inner">{{ $step }}/3</div>
     </div>
     <div class="header-message">
-        <p class="header-message__content">{{ $message }}を選んでください</p>
+        <p class="header-message__content">{{ $message }}</p>
     </div>
 </header>
