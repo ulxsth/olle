@@ -4,7 +4,7 @@
     <main class="main">
         <form action="/start" method="post" id="nav-submit">
             @csrf
-            <x-auto-complete-input name="start" placeholder="出発地点の建物名を入力..." />
+            <x-auto-complete-input name="start" placeholder="{{ __('messages.inputStartPoint') }}" />
             {{--エラー表示部分--}}
             <div id="error-display"></div>
 
