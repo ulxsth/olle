@@ -6,5 +6,5 @@
 ![](https://img.shields.io/badge/version-0.2-green)
 ![](https://img.shields.io/badge/Laravel-v10.47.0-orange)
 
-2024 第4回ガバイソン 出展作品
+2024 第4回ガバイソン 最優秀賞作品
 </div>
