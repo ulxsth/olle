@@ -63,3 +63,6 @@ Route::post('/date', function (Request $request) {
 Route::get('/result', function () {
     return view('result');
 })->name('result');
+
+// 言語切り替え
+Route::get('/language/{lang}', \App\Http\Controllers\LanguageController::class)->name('language.switch');
