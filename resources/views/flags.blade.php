@@ -23,6 +23,7 @@
             <p class="flag__name" id="startlocation"></p>
         </div>
     </div>
+    <div id="restaurant-info" style="margin-top: 30px"></div>
 </main>
 
 @endsection
@@ -33,6 +34,7 @@
         defer></script>
     <script src="{{ asset('js/auto-complete.js') }}"></script>
     <script src="{{ asset('js/add-flag.js') }}"></script>
+    <script src="{{ asset('js/search-shop.js') }}"></script>
     <script src="{{ asset('js/MapbuttonAction.js') }}"></script>
     <script src="{{ asset('js/Startgetlocation.js') }}"></script>
 @endsection
