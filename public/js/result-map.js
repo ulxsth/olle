@@ -26,7 +26,7 @@ function trackCurrentLocation() {
               const currentLat = position.coords.latitude;
               const currentLng = position.coords.longitude;
               if (currentLocationMarker) {
-                  currentLocationMarker.setMap(null); 
+                  currentLocationMarker.setMap(null);
               }
               currentLocationMarker = new google.maps.Marker({
                   position: { lat: currentLat, lng: currentLng },
@@ -35,7 +35,7 @@ function trackCurrentLocation() {
                       url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
                   }
               });
-              map.panTo(new google.maps.LatLng(currentLat, currentLng));
+              // map.panTo(new google.maps.LatLng(currentLat, currentLng));
           },
           (error) => {
               console.error("位置情報を取得できません: ", error);
@@ -124,7 +124,7 @@ function setInitialRouteInstructions(response) {
   const instructionDiv = document.getElementById('route-instructions');
   instructionDiv.style.display = 'block'; // テキストを表示
   instructionDiv.innerHTML = ''; // 以前の内容をクリア
-  
+
   globalresponse = response.routes;
 
   const routeSteps = document.getElementById('route-steps');
@@ -143,25 +143,25 @@ function setInitialRouteInstructions(response) {
   });
 
   const firstStep = response.routes[0].legs[0].steps[0]; // 最初のステップを取得
-  
+
   const instruction = document.createElement('div'); // <div>要素を作成
   instruction.classList.add('step'); // ステップを区別するためにクラスを追加
-  
+
   const instructionText = document.createElement('span'); // テキスト部分を囲む<span>要素を作成
   instructionText.textContent = `Step 1: `;
-  
+
   const instructionContent = document.createElement('span'); // 指示部分を囲む<span>要素を作成
   instructionContent.textContent = removeHTMLTags(firstStep.instructions); // HTMLタグを除去してテキストを設定
-  
+
   instruction.appendChild(instructionText); // テキスト部分を追加
   instruction.appendChild(instructionContent); // 指示部分を追加
-  
+
   if (firstStep.maneuver) {
     const maneuver = document.createElement('span'); // マヌーバーを表示する<span>要素を作成
     maneuver.textContent = ` (${firstStep.maneuver})`;
     instruction.appendChild(maneuver); // マヌーバーを追加
   }
-  
+
   instructionDiv.appendChild(instruction); // ステップを表示する<div>要素を追加
 }
 
