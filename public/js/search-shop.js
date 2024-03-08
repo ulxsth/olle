@@ -33,10 +33,12 @@ window.onload = function () {
                 var photo = place.photos ? place.photos[0].getUrl() : ''; // 画像があればURLを取得し、サイズを調整
 
                 // 検索結果を表示するHTMLを生成
-                var html = '<div class="restaurant">' +
-                    '<h3>' + name + '</h3>' +
+                var html = '<div class="recommend__item">' +
+                    '<h3 class="recommend__item__header">' + name + '</h3>' +
                     '<p>Rating: ' + rating + '</p>' +
+                    '<article class="recommend__item__image">' +
                     '<img src="' + photo + '" alt="Restaurant Photo">' +
+                    '</article>' +
                     '</div>';
 
                 // HTMLを要素に追加

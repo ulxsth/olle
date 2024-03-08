@@ -84,16 +84,32 @@
     align-items: center;
 }
 
-/* 通常の画面サイズのスタイル */
-.restaurant img {
-    max-width: 100%; /* 画像の幅が親要素の幅を超えないように調整 */
-    height: auto; /* 高さは自動で調整 */
+/* recommend */
+.recommend {
+    text-align: center;
 }
 
-/* スマートフォンの場合のスタイル */
-@media only screen and (max-width: 600px) {
-    .restaurant img {
-        width: 100%; /* 画像を親要素の幅いっぱいに広げる */
-        height: auto; /* 高さは自動で調整 */
-    }
+.recommend__header {
+    margin-top: 3rem;
+}
+
+.recommend__item {
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.recommend__item__header {
+    font-size: 1.5rem;
+}
+
+.recommend__item__image {
+    text-align: center;
+}
+
+.recommend__item__image img {
+    border-radius: 1rem;
+    max-width: 90%;
+    aspect-ratio: 16 / 9;
 }

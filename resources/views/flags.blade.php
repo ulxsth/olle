@@ -23,7 +23,12 @@
             <p class="flag__name" id="startlocation"></p>
         </div>
     </div>
-    <div id="restaurant-info" style="margin-top: 30px"></div>
+
+    <!-- fix:BEM -->
+    <div class="recommend">
+        <h2 class="recommend__header">おすすめのお店</h2>
+        <div id="restaurant-info" style="margin-top: 30px"></div>
+    </div>
 </main>
 
 @endsection
