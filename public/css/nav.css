@@ -10,6 +10,7 @@
     bottom: 0;
     width: 100%;
     padding-bottom: env(safe-area-inset-bottom);
+    z-index: 100;
 }
 
 .nav__btn {
