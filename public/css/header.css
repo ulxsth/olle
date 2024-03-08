@@ -86,6 +86,7 @@
         transform: rotate(0deg);
         background: #393c41;
     }
+
     100% {
         transform: rotate(120deg);
         background: #393c41;
@@ -133,14 +134,17 @@
         transform: rotate(120deg);
         background: #393c41;
     }
+
     50% {
         transform: rotate(180deg);
         background: #393c41;
     }
+
     50.01% {
         transform: rotate(360deg);
         background: #308c6e;
     }
+
     100% {
         transform: rotate(360deg);
         background: #308c6e;
@@ -151,9 +155,11 @@
     0% {
         transform: rotate(0deg);
     }
+
     50% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(60deg);
     }
@@ -194,7 +200,27 @@
     0% {
         transform: rotate(60deg);
     }
+
     100% {
         transform: rotate(180deg);
     }
+}
+
+/* language-select */
+.header__language-select__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__language-select__icon img {
+    max-width: 100%;
+}
+
+.header__language-select__list {
+    color: black;
+    list-style: none;
+    text-align: center;
 }
