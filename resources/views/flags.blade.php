@@ -6,9 +6,9 @@
 <main class="flags-main">
     <form action="/flags" method="post" id="nav-submit" class="search-wrap">
         @csrf
-        <x-auto-complete-input name="flag" placeholder="通過地点の建物名を入力..." />
+        <x-auto-complete-input name="flag" placeholder="{{ __('messages.inputPassPoint') }}" />
         <div id="error-display"></div>
-        <button class="search-btn" id="add-flag">追加</button>
+        <button class="search-btn" id="add-flag">{{ __('messages.add') }}</button>
 
 
         {{-- TODO: nameのみにしてjs側からid参照をなくす --}}
@@ -18,7 +18,7 @@
     <div class="flags-wrap">
         <div class="flag">
             <div class="flag__header">
-                <h3 class="flag__checkpoint">出発地点</h3>
+                <h3 class="flag__checkpoint">{{ __('messages.departure') }}</h3>
             </div>
             <p class="flag__name" id="startlocation"></p>
         </div>
