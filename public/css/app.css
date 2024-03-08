@@ -28,3 +28,11 @@ body {
     font-size: 1rem;
     font-weight: bold;
 }
+
+.hidden {
+    display: none;
+}
+
+.map {
+    height: calc(100vh - (120px + 120px));
+}

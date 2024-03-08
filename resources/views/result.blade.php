@@ -4,18 +4,19 @@
     <div class="container">
         <!-- ルート案内テキスト表示用の要素 -->
         <div id="route-instructions" style="display: none;"></div>
-        
-        <button id="toggle-list-button">ルート案内一覧を表示</button>
-        <div id="route-list" style="display: none;">
-            <h3>ルート案内一覧</h3>
-            <ol id="route-steps"></ol>
+        <div class="hidden">
+            <button id="toggle-list-button">ルート案内一覧を表示</button>
+            <div id="route-list" style="display: none;">
+                <h3>ルート案内一覧</h3>
+                <ol id="route-steps"></ol>
+            </div>
+            <p>所要時間：<span id="duration"></span></p>
+            <input checked type="radio" name="travel-mode" value="WALKING">🏃
+            <input type="radio" name="travel-mode" value="BICYCLING">🚲
+            <input type="radio" name="travel-mode" value="DRIVING">🚗
+            <input type="radio" name="travel-mode" value="TRANSIT">🚌
         </div>
-        <p>所要時間：<span id="duration"></span></p>
-        <input checked type="radio" name="travel-mode" value="WALKING">🏃
-        <input type="radio" name="travel-mode" value="BICYCLING">🚲
-        <input type="radio" name="travel-mode" value="DRIVING">🚗
-        <input type="radio" name="travel-mode" value="TRANSIT">🚌
-        <div id="map" style="width: 100%; height: 100vh"></div>
+        <div id="map" class="map"></div>
         <input type="hidden" id="start-lat" value="{{ session('start.lat') }}">
         <input type="hidden" id="start-lng" value="{{ session('start.lng') }}">
         <input type="hidden" id="flag-lat" value="{{ session('flag.lat') }}">
