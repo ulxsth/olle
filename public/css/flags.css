@@ -83,3 +83,17 @@
     gap: 0.5rem;
     align-items: center;
 }
+
+/* 通常の画面サイズのスタイル */
+.restaurant img {
+    max-width: 100%; /* 画像の幅が親要素の幅を超えないように調整 */
+    height: auto; /* 高さは自動で調整 */
+}
+
+/* スマートフォンの場合のスタイル */
+@media only screen and (max-width: 600px) {
+    .restaurant img {
+        width: 100%; /* 画像を親要素の幅いっぱいに広げる */
+        height: auto; /* 高さは自動で調整 */
+    }
+}
