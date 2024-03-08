@@ -19,6 +19,10 @@
         <div class="circle-step__inner">{{ $step }}/3</div>
     </div>
     <div class="header-message">
-        <p class="header-message__content">{{ $message }}を選んでください</p>
+    <ul>
+        <li><a href="{{ route('language.switch', 'ja') }}">JP</a></li>
+        <li><a href="{{ route('language.switch', 'en') }}">EN</a></li>
+    </ul>
+        <p class="header-message__content">{{ __('messages.serectPoint') }}</p>
     </div>
 </header>
