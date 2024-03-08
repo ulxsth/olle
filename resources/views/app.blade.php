@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/flags.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/map-menu.css') }}">
   </head>
 
   <body>

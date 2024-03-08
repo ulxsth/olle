@@ -21,6 +21,7 @@
         <input type="hidden" id="start-lng" value="{{ session('start.lng') }}">
         <input type="hidden" id="flag-lat" value="{{ session('flag.lat') }}">
         <input type="hidden" id="flag-lng" value="{{ session('flag.lng') }}">
+        @include('components.map-menu')
     </div>
 @endsection
 
@@ -29,4 +30,5 @@
         src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_API_KEY') }}&callback=initMap&libraries=places&v=weekly&solution_channel=GMP_CCS_autocomplete_v1"
         defer></script>
     <script src="{{ asset('js/result-map.js') }}"></script>
+    <script src="{{ asset('js/map-menu.js') }}"></script>
 @endsection
